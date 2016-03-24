@@ -145,7 +145,7 @@ public class WeddingOptimalChart
     IntVar z = (from j in MRANGE
                 from k in MRANGE
                 where j < k
-                select C[j,k] * tables[j] == tables[k]
+                select C[j,k] * (tables[j] == tables[k])
                 ).ToArray().Sum().VarWithName("z");
 
     //
